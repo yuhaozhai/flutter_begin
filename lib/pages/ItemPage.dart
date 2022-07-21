@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_begin/widget/ItemBottomNavBar.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ItemPage extends StatelessWidget {
@@ -92,7 +93,7 @@ class ItemPage extends StatelessWidget {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.43,
+                height: MediaQuery.of(context).size.height * 0.4,
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(
                   vertical: 30,
@@ -176,24 +177,31 @@ class ItemPage extends StatelessWidget {
                         SizedBox(height: 10),
                         Row(
                           children: [
-                            for (int i = 1; i < 5; i++)
+                            for (int i = 1; i < 4; i++)
                               Container(
                                 height: 35,
                                 width: 35,
                                 alignment: Alignment.center,
                                 margin: EdgeInsets.symmetric(horizontal: 5),
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFF5F9FD),
-                                    borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color:
-                                            Color(0xFF475269).withOpacity(0.3),
-                                        blurRadius: 5,
-                                        spreadRadius: 1,
-                                      )
-                                    ]),
-                              )
+                                  color: Color(0xFFF5F9FD),
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xFF475269).withOpacity(0.3),
+                                      blurRadius: 5,
+                                      spreadRadius: 1,
+                                    ),
+                                  ],
+                                ),
+                                child: Text(
+                                  i.toString(),
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
                       ],
@@ -205,6 +213,7 @@ class ItemPage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: ItemBottomNavBar(),
     );
   }
 }
